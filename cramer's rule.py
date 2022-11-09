@@ -55,5 +55,54 @@ if __name__ == '__main__':
     #        [0, 1, 0],
     #        [0, 0, 1]]
 
+    # calling the function to get determinant value of given matrix.
+    det_coefficient = determinant_of_matrix(mat)
+
+    # printing the determinant value of given matrix.
+    print("The determinant of the coefficient matrix is: ", det_coefficient)
+
+    # Exit the program if determinant is zero.
+    if det_coefficient == 0:
+        print("The coefficient matrix is singular.")
+        exit()
+    else:
+        print("The coefficient matrix is non-singular.")
+
+    # Enter the solution matrix.
+    print("Enter the elements of solution matrix: ")
+    solution_matrix = []
+    for i in range(rows):
+        solution_matrix.append(int(input()))
+
+    # print the solution matrix.
+    print("The solution matrix is: ", solution_matrix)
+
+    # Use cramer's rule to solve the system of linear equations.
+    for i in range(rows):
+        # initialize the matrix to get the minor matrix.
+        minor_matrix = [[0] * rows for i in range(rows)]
+
+        # get the minor matrix.
+        for j in range(rows):
+            for k in range(rows):
+                if j == i:
+                    minor_matrix[k][j] = solution_matrix[k]
+                else:
+                    minor_matrix[k][j] = mat[k][j]
+
+        # calculate the determinant of minor matrix.
+        det_minor_matrix = determinant_of_matrix(minor_matrix)
+
+        # Exit the program if determinant is zero.
+        if det_minor_matrix == 0:
+            print("The system has infinitely many solutions.")
+            exit()
+
+        # calculate the value of x.
+        x = det_minor_matrix / det_coefficient
+
+        # print the value of x.
+        print("The value of x", i + 1, "is: ", x)
+
     # printing determinant value by function call
-    print('Determinant of the matrix is :', determinant_of_matrix(mat))
+    # print('Determinant of the matrix is :', determinant_of_matrix(mat))
