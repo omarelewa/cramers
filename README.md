@@ -66,7 +66,51 @@ Process finished with exit code 0
 ## Exercise 26
 
 Solve the following system of linear equation using Cramer’s Rule:
-−x1 −x2 +x4= −8
-3x1 +5x2 +5x3 = 24
-2x3 +x4 = −6
-−2x1 −3x2 −3x3 = −15
+>−x_1 − x_2 + x_4 = −8
+> 
+>3x_1 + 5x_2 + 5x_3 = 24
+> 
+>2x_3 + x_4 = −6
+> 
+>−2x_1 − 3x_2 − 3x_3 = −15
+ 
+### Solution
+
+```
+Enter the number of rows and columns: 4
+Enter the elements of matrix: 
+Enter the elements of row 1
+-1
+-1
+0
+1
+Enter the elements of row 2
+3
+5
+5
+0
+Enter the elements of row 3
+0
+0
+2
+1
+Enter the elements of row 4
+-2
+-3
+-3
+0
+The determinant of the coefficient matrix is:  1
+The coefficient matrix is non-singular.
+Enter the elements of solution matrix: 
+-8
+24
+-6
+-15
+The solution matrix is:  [-8, 24, -6, -15]
+The value of x 1 is:  3.0
+The value of x 2 is:  7.0
+The value of x 3 is:  -4.0
+The value of x 4 is:  2.0
+
+Process finished with exit code 0
+```
