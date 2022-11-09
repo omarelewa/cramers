@@ -1,7 +1,5 @@
 # determinant of matrix.
-
 # defining a function to get the minor matrix after excluding i-th row and j-th column.
-
 
 def get_cofactor(m, i, j):
     return [row[: j] + row[j + 1:] for row in (m[: i] + m[i + 1:])]
@@ -49,11 +47,6 @@ if __name__ == '__main__':
         print("Enter the elements of row", i + 1)
         for j in range(rows):
             mat[i][j] = int(input())
-
-    # declaring the matrix.
-    # mat = [[1, 0, 0],
-    #        [0, 1, 0],
-    #        [0, 0, 1]]
 
     # calling the function to get determinant value of given matrix.
     det_coefficient = determinant_of_matrix(mat)
@@ -103,6 +96,3 @@ if __name__ == '__main__':
 
         # print the value of x.
         print("The value of x", i + 1, "is: ", x)
-
-    # printing determinant value by function call
-    # print('Determinant of the matrix is :', determinant_of_matrix(mat))

@@ -1,0 +1,373 @@
+\documentclass[titlepage,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\title{Cramer's Rule}
+\date{9, November 2022}
+\author{Omar Elewa}
+\begin{document}
+  	\maketitle
+    \begin{abstract}
+        Cramer's rule is a method for solving a system of linear equations.
+        It is named after the German mathematician Georg Friedrich Bernhard Cramer.
+		
+		Keywords: Cramer's rule, linear equations, determinants.
+    \end{abstract}
+  	\newpage
+  	
+	\section{Introduction}
+    	Cramer's rule is a method for solving a system of linear equations.
+    	It is named after the German mathematician Georg Friedrich Bernhard Cramer.
+    	It is a method for solving a system of linear equations.
+    	It is named after the German mathematician Georg Friedrich Bernhard Cramer.
+    	\subsection{Georg Friedrich Bernhard Cramer}\label{subsec:georg-friedrich-bernhard-cramer}
+				Cramer's rule, Cramer's paradox, and the Introduction of the idea of utility into mathematical discourse are all linked with Gabriel Cramer. Cramer is also known for his contributions to the field of mathematics. 
+				However, Cramer's support of other outstanding contemporaries, notably in his work as an editor of their papers, resulted in some of the most significant contributions to the field of education that have ever been made.
+ 
+				Cramer was the son of Jean Cramer, a physician, and Anne Mallet Cramer.
+				He was born in Geneva on July 31, 1704, at that time.
+				He was the middle child of three brothers, two of whom went on to get degrees in the legal field and one of whom earned a medical degree. Cramer acquired his Ph.D. at 18 with a dissertation on the characteristics of sound, and only two years later, he was named the co-chair of mathematics at the Académie de la Rive. 
+				Together with Giovanni Ludovico Calandrini, he shared the job and the money. 
+				The two were pioneers in their field since they let pupils unfamiliar with Latin recite in French instead of Latin.
+	   
+				Cramer spent five months in Basel in 1727 after being encouraged by the Académie to travel to increase his knowledge.
+				During this time, he acquainted with Johann Bernoulli, who later became his mentor (1667-1748).
+				In the two years that followed, he went to three different cities: Paris, Leiden, and London.
+				Cramer was given the role of a full head of the department in 1734, five years after his return to Geneva in 1729.
+				This came about as a result of Calandrini being appointed to a philosophy professorship.
+	   
+				Cramer, along with his brothers, was an active participant in the politics of their hometown for a long time.
+				He also exhibited a sense of community spirit when it came to mathematics.
+				Johann Bernoulli (1654-1705) and his brother Jakob Bernoulli (1654–1705), both German mathematicians, and the German philosopher and mathematician Christian Wolff, were among the intellectuals and mathematicians whose works he edited (1679-1754).
+				As a result, he assisted in disseminating these men's ideas and contributed significantly to their success.
+	   
+				After Calandrini resigned his position to join the Swiss government in 1750, Cramer was named professor of philosophy at the Académie. 
+				In the same year he released a four-volume work titled Introduction to the Analysis of Curved Lines and Algebraic Equations the same year.
+				Both Cramer's rule, which governed the solutions of linear equations, and Cramer's paradox, which clarified a proposition initially put forth by Colin Maclaurin (1698-1746) regarding points and cubic curves, were included in this work.
+				Cramer's rule governed the solutions of linear equations, and Cramer's paradox governed the solutions of linear equations.
+				In addition, Cramer was the first to propose the idea of utility, which connects probability theory and mathematical economics.
+	   
+				Cramer was injured when he fell from a carriage one year after releasing the most significant mathematical work of his career.
+				Since the scholar had been working too hard for a long time and was experiencing exhaustion, his physician suggested he take some time off and relax in the south of France.
+				However, Cramer passed away on January 4, 1952, while traveling to the village of Bagnoles.
+    	
+			\subsection{Definition}
+        	Cramer's rule is a method for solving a system of linear equations.
+        	It is named after the German mathematician Georg Friedrich Bernhard Cramer.
+        	It is a method for solving a system of linear equations.
+        	It is named after the German mathematician Georg Friedrich Bernhard Cramer.
+    	\newpage
+
+	\section{Matrices}
+	\subsection{Definition}
+			A matrix is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns.
+		\subsection{Example}
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+			\end{equation*}
+		\subsection{Matrix Operations}
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				+
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				=
+				\left[
+				\begin{matrix}
+					2 & 4 & 6 \\
+					8 & 10 & 12 \\
+					14 & 16 & 18
+				\end{matrix}
+				\right]
+			\end{equation*}
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				-
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				=
+				\left[
+				\begin{matrix}
+					0 & 0 & 0 \\
+					0 & 0 & 0 \\
+					0 & 0 & 0
+				\end{matrix}
+				\right]
+			\end{equation*}
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				*
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				=
+				\left[
+				\begin{matrix}
+					30 & 36 & 42 \\
+					66 & 81 & 96 \\
+					102 & 126 & 150
+				\end{matrix}
+				\right]
+			\end{equation*}
+		\subsubsection{Matrix Inverse}
+
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]
+				\cdot
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]^{-1}
+				=
+				\left[
+				\begin{matrix}
+					1 & 0 & 0 \\
+					0 & 1 & 0 \\
+					0 & 0 & 1
+				\end{matrix}
+				\right]
+			\end{equation*}
+	\subsection{Transpose}
+		\subsubsection{Definition}
+			The transpose of a matrix is an operator which flips a matrix over its diagonal, that is it switches the row and column indices of the matrix by producing another matrix denoted as A$^T$.
+		\subsubsection{Example}
+			\begin{equation*}
+				\left[
+				\begin{matrix}
+					1 & 2 & 3 \\
+					4 & 5 & 6 \\
+					7 & 8 & 9
+				\end{matrix}
+				\right]^{T}
+				=
+				\left[
+				\begin{matrix}
+					1 & 4 & 7 \\
+					2 & 5 & 8 \\
+					3 & 6 & 9
+				\end{matrix}
+				\right]
+			\end{equation*}
+			\subsubsection{Properties of Transpose}
+				\begin{enumerate}
+					\item $(A^T)^T = A$
+					\item $(AB)^T = B^TA^T$
+					\item $(A+B)^T = A^T + B^T$
+					\item $(cA)^T = cA^T$
+				\end{enumerate}
+	\subsection{Determinants}
+		A determinant is a function that assigns a scalar value to a square matrix.
+		For example, the determinant of the matrix
+		$
+			\left[
+				\begin{matrix}
+					a & b \\
+					c & d
+				\end{matrix}
+			\right]
+		$
+		is defined as $ad-bc$. The determinant of a matrix is denoted as $det(A)$. The determinant of a matrix is a scalar value that is used to calculate the inverse of a matrix. 
+		\subsubsection{Properties of determinants}
+			\begin{itemize}
+				\item \textbf{Determinant of a product of matrices}
+					\begin{equation}
+						\det(AB)=\det(A)\det(B)
+					\end{equation}
+				\item \textbf{Determinant of a sum of matrices}
+					\begin{equation}
+						\det(A+B)=\det(A)+\det(B)
+					\end{equation}
+				\item \textbf{Determinant of a scalar multiple of a matrix}
+					\begin{equation}
+						\det(cA)=c^n\det(A)
+					\end{equation}
+				\item \textbf{Determinant of a transpose of a matrix}
+					\begin{equation}
+						\det(A^T)=\det(A)
+					\end{equation}
+				\item \textbf{Determinant of an inverse of a matrix}
+					\begin{equation}
+						\det(A^{-1})=\frac{1}{\det(A)}
+					\end{equation}
+				\item \textbf{Determinant of a matrix with two rows or columns interchanged}
+					\begin{equation}
+						\det(A)=(-1)^{r+c}\det(A)
+					\end{equation}
+				\item \textbf{Determinant of a matrix with two rows or columns multiplied by a scalar}
+					\begin{equation}
+						\det(A)=\det(A)
+					\end{equation}
+				\item \textbf{Determinant of a matrix with two rows or columns added to another row or column}
+					\begin{equation}
+						\det(A)=\det(A)
+					\end{equation}
+				\item \textbf{Determinant of a matrix with two rows or columns interchanged}
+					\begin{equation}
+						\det(A)=(-1)^{r+c}\det(A)
+					\end{equation}
+				\item \textbf{Determinant of a} $2\times2$ \textbf{matrix}
+					\begin{equation}
+						\det
+						\left[
+							\begin{matrix}
+								a & b \\
+								c & d
+							\end{matrix}
+						\right]
+						=ad-bc
+					\end{equation}
+				\item \textbf{Determinant of a} $3\times3$ \textbf{matrix}
+					\begin{equation}
+						\det
+						\left[
+							\begin{matrix}
+								a & b & c \\
+								d & e & f \\
+								g & h & i
+							\end{matrix}
+						\right]
+						=a\det
+						\left[
+							\begin{matrix}
+								e & f \\
+								h & i
+							\end{matrix}
+						\right]
+						-b\det
+						\left[
+							\begin{matrix}
+								d & f \\
+								g & i
+							\end{matrix}
+						\right]
+						+c\det
+						\left[
+							\begin{matrix}
+								d & e \\
+								g & h
+							\end{matrix}
+						\right]
+					\end{equation}
+				\item \textbf{Determinant of a} $n\times n$ \textbf{matrix}
+					\begin{equation}
+						\det(A)=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det(A_{1j})
+					\end{equation}
+			\end{itemize}
+			\newpage
+	\subsection{Singular Matrices}
+		A matrix is singular if its determinant is zero. A singular matrix is also called a degenerate matrix. A singular matrix does not have an inverse. A singular matrix is also called a non-invertible matrix.
+	
+	\subsection{Symmetric Matrices}
+		A symmetric matrix is a square matrix that is equal to its transpose. A symmetric matrix is denoted as $A$.
+		\subsubsection{Properties of Symmetric Matrices}
+			\begin{enumerate}
+				\item $A = A^T$
+				\item $A^T = A$
+				\item $det(A) = det(A^T)$
+				\item $det(A) = det(A^T)$
+				\item $det(A) = det(A^T)$
+			\end{enumerate}
+	\subsection{Skew-Symmetric Matrices}
+		A skew-symmetric matrix is a square matrix that is equal to its negative transpose. A skew-symmetric matrix is denoted as $A$.
+		\subsubsection{Properties of Skew-Symmetric Matrices}
+			\begin{enumerate}
+				\item $A = -A^T$
+				\item $A^T = -A$
+				\item $det(A) = -det(A^T)$
+				\item $det(A) = -det(A^T)$
+				\item $det(A) = -det(A^T)$
+			\end{enumerate}
+	\subsection{Inverse of a matrix}
+		The inverse of a matrix is a matrix that when multiplied by the original matrix gives the identity matrix. The inverse of a matrix is denoted as $A^{-1}$.
+		\subsubsection{Properties of Inverse of a matrix}
+			\begin{enumerate}
+				\item $A^{-1}A=I$
+				\item $AA^{-1}=I$
+				\item $A^{-1}A=I$
+				\item $AA^{-1}=I$
+				\item $AA^{-1}=I$
+			\end{enumerate}
+	\subsection{Properties of Inverse of a matrix}
+		\begin{enumerate}
+			\item $A^{-1}A=I$
+			\item $AA^{-1}=I$
+			\item $A^{-1}A=I$
+			\item $AA^{-1}=I$
+			\item $AA^{-1}=I$
+		\end{enumerate}
+
+	\section{Theorem}\label{sec:theorem}
+		
+	\newpage
+
+  	\section{Proof}\label{sec:proof}
+	\newpage
+	
+	\section{Gauss-Jordan Elimination}\label{sec:gauss-jordan-elimination}
+	\newpage
+  	
+	\section{Comparison between Cramer's rule and Gauss-Jordan Elimination}\label{sec:comparison-between-cramer's-rule-and-gauss-jordan-elimination}
+	\textnormal{Compare Cramer's rule with Gauss-Jordan and determine which algorithm is more efficient for solving systems of linear equations.}
+
+		\textnormal{Support your work with examples different from the ones used in the book.}
+    	\newpage
+	
+	\section{Examples}\label{sec:examples}
+
+	\subsection{Question 27}\label{subsec:question-27}
+
+	\subsection{Question 28}\label{subsec:question-28}
+	\newpage
+	
+	\section{Conclusion}\label{sec:conclusion}
+	\newpage
+	
+	\section{Bibliography}\label{sec:bibliography}
+
+\end{document}
