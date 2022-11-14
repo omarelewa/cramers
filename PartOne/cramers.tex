@@ -1,9 +1,11 @@
 \documentclass[titlepage,a4paper]{article}
 \usepackage{amsmath}
 \usepackage{mathtools}
+
 \title{Cramer's Rule}
 \date{9, November 2022}
 \author{Omar Elewa}
+
 \begin{document}
   	\maketitle
     \begin{abstract}
@@ -60,7 +62,7 @@
 	\section{Matrices}
 	\subsection{Definition}
 			A matrix is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns.
-		\subsection{Example}
+		\subsubsection{Example}
 			\begin{equation*}
 				\left[
 				\begin{matrix}
@@ -299,7 +301,131 @@
 						\det(A)=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det(A_{1j})
 					\end{equation}
 			\end{itemize}
-			\newpage
+			\subsubsection{Examples of Determinants}
+				\begin{enumerate}
+					\item \textbf{Determinant of a} $2\times2$ \textbf{matrix}
+						\begin{equation}
+							\det
+							\left[
+								\begin{matrix}
+									1 & 2 \\
+									3 & 4
+								\end{matrix}
+							\right]
+							=1\cdot4-2\cdot3=-2
+						\end{equation}
+					\item \textbf{Determinant of a} $3\times3$ \textbf{matrix}
+						\begin{equation}
+							\det
+							\left[
+								\begin{matrix}
+									1 & 2 & 3 \\
+									4 & 5 & 6 \\
+									7 & 8 & 9
+								\end{matrix}
+							\right]
+							=1\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 6 \\
+									8 & 9
+								\end{matrix}
+							\right]
+							-2\cdot\det
+							\left[
+								\begin{matrix}
+									4 & 6 \\
+									7 & 9
+								\end{matrix}
+							\right]
+							+3\cdot\det
+							\left[
+								\begin{matrix}
+									4 & 5 \\
+									7 & 8
+								\end{matrix}
+							\right]
+							=1\cdot(-3)-2\cdot6+3\cdot(-3)=-3
+						\end{equation}
+					\item \textbf{Determinant of a} $4\times4$ \textbf{matrix}
+						\begin{equation}
+							\det
+							\left[
+								\begin{matrix}
+									1 & 2 & 3 & 4 \\
+									5 & 6 & 7 & 8 \\
+									9 & 10 & 11 & 12 \\
+									13 & 14 & 15 & 16
+								\end{matrix}
+							\right]
+							=1\cdot\det
+							\left[
+								\begin{matrix}
+									6 & 7 & 8 \\
+									10 & 11 & 12 \\
+									14 & 15 & 16
+								\end{matrix}
+							\right]
+							-2\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 7 & 8 \\
+									9 & 11 & 12 \\
+									13 & 15 & 16
+								\end{matrix}
+							\right]
+							+3\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 6 & 8 \\
+									9 & 10 & 12 \\
+									13 & 14 & 16
+								\end{matrix}
+							\right]
+							-4\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 6 & 7 \\
+									9 & 10 & 11 \\
+									13 & 14 & 15
+								\end{matrix}
+							\right]
+							=1\cdot\det
+							\left[
+								\begin{matrix}
+									6 & 7 & 8 \\
+									10 & 11 & 12 \\
+									14 & 15 & 16
+								\end{matrix}
+							\right]
+							-2\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 7 & 8 \\
+									9 & 11 & 12 \\
+									13 & 15 & 16
+								\end{matrix}
+							\right]
+							+3\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 6 & 8 \\
+									9 & 10 & 12 \\
+									13 & 14 & 16
+								\end{matrix}
+							\right]
+							-4\cdot\det
+							\left[
+								\begin{matrix}
+									5 & 6 & 7 \\
+									9 & 10 & 11 \\
+									13 & 14 & 15
+								\end{matrix}
+							\right]
+							=1\cdot(-3)-2\cdot6+3\cdot(-3)-4\cdot(-3)=-3
+						\end{equation}
+				\end{enumerate}
+				\newpage
 	\subsection{Singular Matrices}
 		A matrix is singular if its determinant is zero. A singular matrix is also called a degenerate matrix. A singular matrix does not have an inverse. A singular matrix is also called a non-invertible matrix.
 	
@@ -333,15 +459,217 @@
 				\item $AA^{-1}=I$
 				\item $AA^{-1}=I$
 			\end{enumerate}
-	\subsection{Properties of Inverse of a matrix}
+	
+	\subsection{Adjoint of a matrix}
+		The adjoint of a matrix is the transpose of the cofactor matrix of the matrix. The adjoint of a matrix is denoted as $A^*$.
+		\subsubsection{Properties of Adjoint of a matrix}
+			\begin{enumerate}
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+			\end{enumerate}
+			\subsubsection{Examples Of Adjoints}
 		\begin{enumerate}
-			\item $A^{-1}A=I$
-			\item $AA^{-1}=I$
-			\item $A^{-1}A=I$
-			\item $AA^{-1}=I$
-			\item $AA^{-1}=I$
+			\item \textbf{Adjoint of a} $2\times2$ \textbf{matrix}
+				\begin{equation}
+					\left[
+						\begin{matrix}
+							a & b \\
+							c & d
+						\end{matrix}
+					\right]^*
+					=
+					\left[
+						\begin{matrix}
+							d & -b \\
+							-c & a
+						\end{matrix}
+					\right]
+				\end{equation}
+			\item \textbf{Adjoint of a} $3\times3$ \textbf{matrix}
+				\begin{equation}
+					\left[
+						\begin{matrix}
+							a & b & c \\
+							d & e & f \\
+							g & h & i
+						\end{matrix}
+					\right]^*
+					=
+					\left[
+						\begin{matrix}
+							\det
+							\left[
+								\begin{matrix}
+									e & f \\
+									h & i
+								\end{matrix}
+							\right]
+							&
+							-\det
+							\left[
+								\begin{matrix}
+									d & f \\
+									g & i
+								\end{matrix}
+							\right]
+							&
+							\det
+							\left[
+								\begin{matrix}
+									d & e \\
+									g & h
+								\end{matrix}
+							\right]
+							\\
+							-\det
+							\left[
+								\begin{matrix}
+									b & c \\
+									h & i
+								\end{matrix}
+							\right]
+							&
+							\det
+							\left[
+								\begin{matrix}
+									a & c \\
+									g & i
+								\end{matrix}
+							\right]
+							&
+							-\det
+							\left[
+								\begin{matrix}
+									a & b \\
+									g & h
+								\end{matrix}
+							\right]
+							\\
+							\det
+							\left[
+								\begin{matrix}
+									b & c \\
+									e & f
+								\end{matrix}
+							\right]
+							&
+							-\det
+							\left[
+								\begin{matrix}
+									a & c \\
+									d & f
+								\end{matrix}
+							\right]
+							&
+							\det
+							\left[
+								\begin{matrix}
+									a & b \\
+									d & e
+								\end{matrix}
+							\right]
+						\end{matrix}
+					\right]
+				\end{equation}
 		\end{enumerate}
-
+	\subsection{Cofactor of a matrix}
+		The cofactor of a matrix is the determinant of the minor of the matrix. The cofactor of a matrix is denoted as $A^*$.
+		\subsubsection{Properties of Cofactor of a matrix}
+			\begin{enumerate}
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+				\item $A^* = (A^T)^*$
+			\end{enumerate}
+		\subsubsection{Examples Of Cofactor}
+		\begin{enumerate}
+			\item \textbf{Cofactor of a} $2\times2$ \textbf{matrix}
+				\begin{equation}
+					\left[
+						\begin{matrix}
+							a & b \\
+							c & d
+						\end{matrix}
+					\right]^*
+					=
+					\left[
+						\begin{matrix}
+							d & -b \\
+							-c & a
+						\end{matrix}
+					\right]
+				\end{equation}
+			\item \textbf{Cofactor of a} $3\times3$ \textbf{matrix}
+				\begin{equation}
+					\left[
+						\begin{matrix}
+							a & b & c \\
+							d & e & f \\
+							g & h & i
+						\end{matrix}
+					\right]^*
+					=
+					\left[
+						\begin{matrix}
+							\det
+							\left[
+								\begin{matrix}
+									e & f \\
+									h & i
+								\end{matrix}
+							\right]
+							&
+							-\det
+							\left[
+								\begin{matrix}
+									d & f \\
+									g & i
+								\end{matrix}
+							\right]
+							&
+							\det
+							\left[
+								\begin{matrix}
+									d & e \\
+									g & h
+								\end{matrix}
+							\right]
+							\\
+							-\det
+							\left[
+								\begin{matrix}
+									b & c \\
+									h & i
+								\end{matrix}
+							\right]
+							&
+							\det
+							\left[
+								\begin{matrix}
+									a & c \\
+									g & i
+								\end{matrix}
+							\right]
+							&
+							-\det
+							\left[
+								\begin{matrix}
+									a & b \\
+									g & h
+								\end{matrix}
+							\right]
+							\\
+							\det
+							\left[
+								\begin{matrix}
+									b & c \\
+									e & f
+	
+		
 	\section{Theorem}\label{sec:theorem}
 		
 	\newpage
