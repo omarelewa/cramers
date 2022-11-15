@@ -6,8 +6,6 @@ def get_cofactor(m, i, j):
 
 
 # defining the function to calculate determinant value of given matrix a.
-
-
 def determinant_of_matrix(mat):
     # if given matrix is of order 2*2 then simply return det value by cross multiplying elements of matrix.
     if len(mat) == 2:
